@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hamkke — Never lift alone</title>
+<meta name="description" content="Hamkke matches you with verified gym buddies and mentors in your building and gym. Learn from someone above you, lift up someone newer. Never lift alone." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="site.css" />
+</head>
+<body>
+
+<!-- ░░ NAV ░░ -->
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top">
+      <span class="brand-mark"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" fill="#fff"/></svg></span>
+      Hamkke
+    </a>
+    <nav class="nav-links">
+      <a href="#how">How it works</a>
+      <a href="#trust">Trust &amp; safety</a>
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-ghost btn-sm" href="#">Log in</a>
+      <a class="btn btn-primary btn-sm" href="#get">Get early access</a>
+      <button class="btn btn-ghost btn-sm nav-burger" id="burger" aria-label="Menu">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<a id="top"></a>
+
+<!-- ░░ HERO ░░ -->
+<section class="hero">
+  <div class="wrap hero-in">
+    <div class="reveal in">
+      <span class="pill"><span class="dot" style="background:var(--teal)"></span>함께 · together</span>
+      <h1 class="display">Never lift<br/><span class="grad">alone again.</span></h1>
+      <p class="lead">Hamkke matches you with <b>verified</b> gym buddies and mentors in your building and your gym. Learn from someone a few steps ahead — and lift up someone just starting out.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#get">Get early access
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="#how">See how it works</a>
+      </div>
+      <div class="hero-trust">
+        <div class="av-stack">
+          <span class="av" style="background:linear-gradient(145deg,hsl(222 55% 50%),hsl(262 60% 32%))">MR</span>
+          <span class="av" style="background:linear-gradient(145deg,hsl(158 50% 44%),hsl(198 55% 30%))">DK</span>
+          <span class="av" style="background:linear-gradient(145deg,hsl(282 48% 50%),hsl(322 52% 34%))">PN</span>
+          <span class="av" style="background:linear-gradient(145deg,hsl(38 60% 50%),hsl(78 55% 34%))">CO</span>
+        </div>
+        <div class="hero-trust-txt">
+          <span class="stars" aria-hidden="true">★★★★★</span> <b>4.9</b> from early members<br/>
+          2,400+ lifters matched in their first month
+        </div>
+      </div>
+    </div>
+
+    <!-- hero phone: Discover -->
+    <div class="hero-art reveal in">
+      <div class="float-card" style="top:34px;left:-6px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+        ID verified
+      </div>
+      <div class="float-card" style="bottom:60px;right:-10px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        In your building
+      </div>
+      <div class="device">
+        <div class="screen">
+          <div class="screen-pad">
+            <div class="m-eyebrow">The Ironworks · Cedar Court</div>
+            <div class="m-title" style="margin-top:3px">Find your <span style="color:var(--accent)">spot</span></div>
+            <div class="m-seg" style="margin-top:14px">
+              <div class="on">All nearby</div><div>Building</div><div>Gym</div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:11px;margin-top:14px">
+              <div class="m-card">
+                <div style="display:flex;gap:11px;align-items:center">
+                  <div class="m-av" style="background:linear-gradient(145deg,hsl(222 58% 50%),hsl(262 60% 30%));box-shadow:0 0 0 2.5px #e8783c">MR</div>
+                  <div style="flex:1">
+                    <div style="font-family:var(--f-display);font-weight:600;font-size:15px">Maya R. <span style="color:var(--ink-3);font-weight:400">31</span></div>
+                    <div style="font-size:11px;color:var(--accent);font-weight:700;margin-top:2px">↑ Can mentor you · Veteran</div>
+                  </div>
+                  <span class="m-chip" style="background:var(--accent-soft);color:var(--accent)">$28</span>
+                </div>
+                <div style="font-size:12px;color:var(--ink-2);margin-top:9px;line-height:1.4">Powerlifting coach. I love getting beginners under the bar safely.</div>
+              </div>
+              <div class="m-card">
+                <div style="display:flex;gap:11px;align-items:center">
+                  <div class="m-av" style="background:linear-gradient(145deg,hsl(158 52% 44%),hsl(198 55% 28%));box-shadow:0 0 0 2.5px #3aaf63">DK</div>
+                  <div style="flex:1">
+                    <div style="font-family:var(--f-display);font-weight:600;font-size:15px">Devon K. <span style="color:var(--ink-3);font-weight:400">28</span></div>
+                    <div style="font-size:11px;color:var(--teal);font-weight:700;margin-top:2px">⟷ Your level · Solid</div>
+                  </div>
+                  <span class="m-chip" style="background:var(--bg-soft);color:var(--ink-2)">Free</span>
+                </div>
+                <div style="font-size:12px;color:var(--ink-2);margin-top:9px;line-height:1.4">4 years in, training for my first meet. Want a steady buddy.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- stats -->
+  <div class="wrap">
+    <div class="stats reveal">
+      <div class="stat"><div class="n">2,400<span class="u">+</span></div><div class="l">lifters matched</div></div>
+      <div class="stat"><div class="n">11,000<span class="u">+</span></div><div class="l">sessions trained</div></div>
+      <div class="stat"><div class="n">4.9<span class="u">★</span></div><div class="l">average partner rating</div></div>
+      <div class="stat"><div class="n">100<span class="u">%</span></div><div class="l">ID-verified profiles</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ HOW IT WORKS ░░ -->
+<section class="section soft" id="how">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">How it works</span>
+      <h2 class="display">Everyone climbs the same chain.</h2>
+      <p>You're never just a beginner. On Hamkke you learn from someone a few rungs above, train beside people at your level, and lift up someone newer — all at once.</p>
+    </div>
+    <div class="chain-grid">
+      <div class="ladder reveal">
+        <div class="rung">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></div>
+          <div><b>Maya · Veteran</b><span>9 years in. Coaches you under the bar.</span></div>
+        </div>
+        <div class="rung you">
+          <div class="ic" style="background:var(--accent);"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12h6"/><path d="M10 8H8a4 4 0 100 8h2"/><path d="M14 8h2a4 4 0 110 8h-2"/></svg></div>
+          <div><b>You · Building</b><span>2 years in. Learning and giving back.</span></div>
+        </div>
+        <div class="rung">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></div>
+          <div><b>Sam · Newcomer</b><span>2 months in. You show them the ropes.</span></div>
+        </div>
+      </div>
+      <div class="howsteps reveal">
+        <div class="howstep">
+          <div class="k">1</div>
+          <div><h4>Set your level</h4><p>Tell us how long you've trained and what you're after. We place you on the experience ladder.</p></div>
+        </div>
+        <div class="howstep">
+          <div class="k">2</div>
+          <div><h4>Match by proximity &amp; goals</h4><p>See verified lifters in your apartment gym and nearby — filtered to mentors, buddies, or people you can help.</p></div>
+        </div>
+        <div class="howstep">
+          <div class="k">3</div>
+          <div><h4>Train together</h4><p>Book a free buddy session or a paid hour with a mentor. Meet at the gym, log the lift, build the habit.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ TRUST & SAFETY ░░ -->
+<section class="section" id="trust">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Trust &amp; safety</span>
+      <h2 class="display">Meeting a stranger? We've got you.</h2>
+      <p>Every layer of Hamkke is built so you can show up confident — whether it's your first session or your hundredth.</p>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-card reveal">
+        <div class="trust-ic" style="background:var(--accent-soft)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h4>Government ID verification</h4>
+        <p>Real people only. Every profile confirms a government ID before they can match.</p>
+      </div>
+      <div class="trust-card reveal">
+        <div class="trust-ic" style="background:var(--teal-soft)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <h4>Gym check-in confirmation</h4>
+        <p>We confirm members actually train where they say — no catfishing your squat rack.</p>
+      </div>
+      <div class="trust-card reveal">
+        <div class="trust-ic" style="background:var(--gold-soft)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.3-7-9.3A4 4 0 0112 8a4 4 0 017 2.7c0 5-7 9.3-7 9.3z"/></svg></div>
+        <h4>Member vouches &amp; reviews</h4>
+        <p>See honest ratings and vouches from other lifters before you ever say hello.</p>
+      </div>
+      <div class="trust-card reveal">
+        <div class="trust-ic" style="background:var(--accent-soft)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h4>Meet during staffed hours</h4>
+        <p>For first sessions, Hamkke suggests public, staffed gym times — never an empty room.</p>
+      </div>
+      <div class="trust-card reveal">
+        <div class="trust-ic" style="background:var(--teal-soft)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 01-11.5 7.2L4 21l1.8-5.5A8 8 0 1121 12z"/></svg></div>
+        <h4>Share your live session</h4>
+        <p>Send a trusted contact your live location and session details in a single tap.</p>
+      </div>
+      <div class="trust-card reveal">
+        <div class="trust-ic" style="background:var(--gold-soft)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></div>
+        <h4>Certified coaches</h4>
+        <p>Paid mentors display real coaching and CPR / first-aid credentials, verified by us.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ FEATURES ░░ -->
+<section class="section soft" id="features">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">The app</span>
+      <h2 class="display">Everything to find your people — and grow.</h2>
+    </div>
+
+    <!-- feature 1: discover -->
+    <div class="feat reveal">
+      <div>
+        <h3 class="display">Discover who's already nearby</h3>
+        <p style="font-size:16px;color:var(--ink-2);margin-top:14px">With the rise of apartment gyms, your next training partner might be three floors up. Filter by your building, your gym, or all nearby — then by mentor, buddy, or someone to coach.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>Same-building and same-gym matching</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>Filter by experience and goals, not just looks</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>Free buddies or paid mentor sessions</li>
+        </ul>
+      </div>
+      <div class="feat-art">
+        <div class="device" style="width:264px">
+          <div class="screen" style="height:540px">
+            <div class="screen-pad">
+              <div class="m-eyebrow">Your ladder</div>
+              <div class="m-title" style="margin-top:3px">The Chain</div>
+              <div style="position:relative;margin-top:18px;padding-left:46px">
+                <div style="position:absolute;left:18px;top:14px;bottom:14px;width:3px;border-radius:3px;background:linear-gradient(var(--accent),var(--teal) 50%,var(--gold));opacity:.5"></div>
+                <div style="display:flex;flex-direction:column;gap:10px">
+                  <div class="m-card" style="display:flex;gap:10px;align-items:center;padding:10px">
+                    <div class="m-av" style="width:36px;height:36px;font-size:13px;background:linear-gradient(145deg,hsl(222 58% 50%),hsl(262 60% 30%));box-shadow:0 0 0 2px #e8783c">MR</div>
+                    <div style="font-size:12.5px"><b style="font-family:var(--f-display)">Maya R.</b><br/><span style="color:var(--ink-3);font-size:11px">Mentor · Veteran</span></div>
+                  </div>
+                  <div class="m-card" style="display:flex;gap:10px;align-items:center;padding:11px;border-color:var(--accent);background:linear-gradient(120deg,var(--accent-soft),#fff)">
+                    <div class="m-av" style="width:36px;height:36px;font-size:13px;background:linear-gradient(145deg,hsl(215 55% 50%),hsl(255 58% 32%));box-shadow:0 0 0 2px var(--teal)">AX</div>
+                    <div style="font-size:12.5px"><b style="font-family:var(--f-display)">You</b> <span class="m-chip" style="background:var(--teal-soft);color:var(--teal);font-size:9px">Building</span><br/><span style="color:var(--ink-3);font-size:11px">2y · 23 sessions</span></div>
+                  </div>
+                  <div class="m-card" style="display:flex;gap:10px;align-items:center;padding:10px">
+                    <div class="m-av" style="width:36px;height:36px;font-size:13px;background:linear-gradient(145deg,hsl(242 55% 52%),hsl(282 58% 34%));box-shadow:0 0 0 2px #6aa9f2">SW</div>
+                    <div style="font-size:12.5px"><b style="font-family:var(--f-display)">Sam W.</b><br/><span style="color:var(--ink-3);font-size:11px">You mentor · Newcomer</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- feature 2: progress -->
+    <div class="feat flip reveal">
+      <div>
+        <h3 class="display">Track every lift you make together</h3>
+        <p style="font-size:16px;color:var(--ink-2);margin-top:14px">Log your sets, watch your big lifts trend up, and keep your streak alive. Your progress lives right next to the people who helped you earn it.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>One-tap set logging with weight &amp; reps</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>Trend lines for squat, bench &amp; deadlift</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>Streaks, PRs and weekly volume</li>
+        </ul>
+      </div>
+      <div class="feat-art">
+        <div class="device" style="width:264px">
+          <div class="screen" style="height:540px">
+            <div class="screen-pad">
+              <div class="m-eyebrow">Your training</div>
+              <div class="m-title" style="margin-top:3px">Progress</div>
+              <div style="display:flex;gap:8px;margin-top:14px">
+                <div class="m-card" style="flex:1;text-align:center;padding:11px 4px"><div class="num" style="font-size:20px">2</div><div class="m-eyebrow" style="margin-top:2px">sessions</div></div>
+                <div class="m-card" style="flex:1;text-align:center;padding:11px 4px"><div class="num" style="font-size:20px">6,959</div><div class="m-eyebrow" style="margin-top:2px">kg vol</div></div>
+                <div class="m-card" style="flex:1;text-align:center;padding:11px 4px"><div class="num" style="font-size:20px">3</div><div class="m-eyebrow" style="margin-top:2px">PRs</div></div>
+              </div>
+              <div class="m-card" style="margin-top:12px">
+                <div style="display:flex;justify-content:space-between;align-items:flex-end">
+                  <div><div style="font-family:var(--f-display);font-weight:600;font-size:14px">Back Squat</div><div style="margin-top:2px"><span class="num" style="font-size:24px">95</span> <span style="font-size:11px;color:var(--ink-3)">kg best</span></div></div>
+                  <span class="m-chip" style="background:var(--teal-soft);color:var(--teal)">↑ +11 kg</span>
+                </div>
+                <svg class="m-spark" viewBox="0 0 200 40" preserveAspectRatio="none" style="margin-top:8px">
+                  <defs><linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--accent)" stop-opacity="0.22"/><stop offset="1" stop-color="var(--accent)" stop-opacity="0"/></linearGradient></defs>
+                  <polygon points="5,40 5,30 38,27 70,24 102,20 135,15 168,12 195,8 195,40" fill="url(#sg)"/>
+                  <polyline points="5,30 38,27 70,24 102,20 135,15 168,12 195,8" fill="none" stroke="var(--accent)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="195" cy="8" r="3.4" fill="var(--accent)" stroke="#fff" stroke-width="2"/>
+                </svg>
+              </div>
+              <div class="m-card" style="margin-top:12px">
+                <div style="display:flex;justify-content:space-between;align-items:flex-end">
+                  <div><div style="font-family:var(--f-display);font-weight:600;font-size:14px">Deadlift</div><div style="margin-top:2px"><span class="num" style="font-size:24px">120</span> <span style="font-size:11px;color:var(--ink-3)">kg best</span></div></div>
+                  <span class="m-chip" style="background:var(--teal-soft);color:var(--teal)">↑ +18 kg</span>
+                </div>
+                <svg class="m-spark" viewBox="0 0 200 40" preserveAspectRatio="none" style="margin-top:8px">
+                  <polygon points="5,40 5,32 38,28 70,25 102,21 135,16 168,11 195,7 195,40" fill="url(#sg)"/>
+                  <polyline points="5,32 38,28 70,25 102,21 135,16 168,11 195,7" fill="none" stroke="var(--accent)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="195" cy="7" r="3.4" fill="var(--accent)" stroke="#fff" stroke-width="2"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ COMMUNITY (real photos) ░░ -->
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Real people</span>
+      <h2 class="display">A spotter for everyone.</h2>
+      <p>From nervous first-timers to seasoned coaches — Hamkke is built on people showing up for each other.</p>
+    </div>
+    <div class="community reveal">
+      <image-slot id="comm-1" class="big" shape="rounded" radius="20" placeholder="Photo — two people training together"></image-slot>
+      <image-slot id="comm-2" shape="rounded" radius="20" placeholder="Photo — spotting a lift"></image-slot>
+      <image-slot id="comm-3" shape="rounded" radius="20" placeholder="Photo — high five"></image-slot>
+      <image-slot id="comm-4" shape="rounded" radius="20" placeholder="Photo — coach &amp; beginner"></image-slot>
+      <image-slot id="comm-5" shape="rounded" radius="20" placeholder="Photo — gym community"></image-slot>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ TESTIMONIALS ░░ -->
+<section class="section soft">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">From the community</span>
+      <h2 class="display">People who stopped lifting alone.</h2>
+    </div>
+    <div class="tgrid">
+      <div class="tcard reveal">
+        <span class="stars">★★★★★</span>
+        <p>"I'd quietly quit three gyms because I felt lost. My Hamkke mentor met me at the rack on day one. Six weeks later my squat is up 15kg."</p>
+        <div class="who"><span class="av" style="background:linear-gradient(145deg,hsl(282 50% 50%),hsl(322 54% 34%))">PN</span><div><b>Priya N.</b><span>Building · Cedar Court</span></div></div>
+      </div>
+      <div class="tcard reveal">
+        <span class="stars">★★★★★</span>
+        <p>"I love coaching but hated cold-messaging strangers. Now beginners in my own building find me, verified and ready. It's a real side income."</p>
+        <div class="who"><span class="av" style="background:linear-gradient(145deg,hsl(222 56% 50%),hsl(262 58% 32%))">MR</span><div><b>Maya R.</b><span>Veteran · Coach</span></div></div>
+      </div>
+      <div class="tcard reveal">
+        <span class="stars">★★★★★</span>
+        <p>"Restarting after years off was terrifying. Having a patient buddy two doors down who just gets it changed everything. I actually show up now."</p>
+        <div class="who"><span class="av" style="background:linear-gradient(145deg,hsl(128 50% 44%),hsl(168 54% 30%))">JT</span><div><b>Jordan T.</b><span>Newcomer · Comeback</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ PRICING ░░ -->
+<section class="section" id="pricing">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Pricing</span>
+      <h2 class="display">Free to find a buddy. Pay only for coaching.</h2>
+      <p>Hamkke is free to join and match. You only pay when you book a mentor's time.</p>
+    </div>
+    <div class="price-grid">
+      <div class="price reveal">
+        <h4>Buddy</h4>
+        <div class="amt">Free</div>
+        <div class="sub">For finding your people</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>Unlimited buddy matching</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>Building &amp; gym discovery</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>Progress tracking &amp; streaks</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>ID verification &amp; safety tools</li>
+        </ul>
+        <a class="btn btn-ghost" href="#get">Get started</a>
+      </div>
+      <div class="price feature reveal">
+        <span class="tag">Most popular</span>
+        <h4>Sessions</h4>
+        <div class="amt">$20–45<small> / session</small></div>
+        <div class="sub">Pay a mentor per hour</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>Everything in Buddy</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>Book verified, rated mentors</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>In-app secure payments</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>Satisfaction guarantee</li>
+        </ul>
+        <a class="btn btn-primary" href="#get">Find a mentor</a>
+      </div>
+      <div class="price reveal">
+        <h4>Hamkke Plus</h4>
+        <div class="amt">$9<small> / month</small></div>
+        <div class="sub">For the committed</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>Priority placement in discovery</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>Reduced session fees</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>Advanced progress insights</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>Earn-as-a-mentor payouts</li>
+        </ul>
+        <a class="btn btn-ghost" href="#get">Go Plus</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ FAQ ░░ -->
+<section class="section soft" id="faq">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Questions</span>
+      <h2 class="display">Good to know.</h2>
+    </div>
+    <div class="faq reveal" id="faqList">
+      <div class="qa">
+        <button>Is it safe to meet someone from the app?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="ans"><p>Safety is the core of Hamkke. Every member verifies a government ID, gym check-ins are confirmed, and first sessions are suggested during staffed, public gym hours. You can share your live session with a trusted contact in one tap, and read vouches and reviews before you match.</p></div>
+      </div>
+      <div class="qa">
+        <button>Do I have to pay to use it?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="ans"><p>No. Finding and training with buddies at your level is completely free. You only pay when you choose to book a paid session with a mentor, and prices are always shown up front.</p></div>
+      </div>
+      <div class="qa">
+        <button>I'm a total beginner — is this for me?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="ans"><p>Especially for you. Hamkke exists so newcomers never feel lost. You'll be matched with patient mentors and buddies who were beginners once too — and you can keep it free with a buddy or learn faster with a paid mentor.</p></div>
+      </div>
+      <div class="qa">
+        <button>Can I earn money as a mentor?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="ans"><p>Yes. If you've got experience to share, set your rate and get discovered by newer lifters in your building and gym. Hamkke handles secure payments and scheduling so you can focus on coaching.</p></div>
+      </div>
+      <div class="qa">
+        <button>Does it only work in apartment gyms?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="ans"><p>Not at all. Apartment gyms are a perfect fit because your match might be a few floors away — but Hamkke works at any gym. Filter by your building, your gym, or everyone nearby.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ FINAL CTA ░░ -->
+<section class="section" id="get">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <span class="pill" style="background:rgba(255,255,255,0.18);color:#fff;border-color:rgba(255,255,255,0.3)"><span class="dot" style="background:#fff"></span>함께 · together</span>
+      <h2 class="display" style="margin-top:16px">Find your people.</h2>
+      <p>Join the early-access list and be first to match with verified buddies and mentors in your gym.</p>
+      <form class="signup" id="signup" novalidate>
+        <div class="signup-row">
+          <label class="sr-only" for="signup-email">Email address</label>
+          <input class="signup-input" id="signup-email" name="email" type="email"
+                 inputmode="email" autocomplete="email" placeholder="you@email.com"
+                 aria-describedby="signup-msg" required />
+          <button class="btn btn-light signup-btn" type="submit">
+            Get early access
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+        <p class="signup-msg" id="signup-msg" role="alert" aria-live="polite"></p>
+        <p class="signup-fine">Free to join · No spam — just one heads-up when Hamkke opens in your gym.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ FOOTER ░░ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="#top">
+          <span class="brand-mark"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" fill="#fff"/></svg></span>
+          Hamkke
+        </a>
+        <p style="margin-top:14px;max-width:24em;font-size:14.5px;color:#9fb0c6">Never lift alone. Verified gym buddies and mentors, matched by your building and your goals.</p>
+      </div>
+      <div>
+        <h5>Product</h5>
+        <a href="#how">How it works</a><a href="#features">Features</a><a href="#pricing">Pricing</a><a href="#trust">Trust &amp; safety</a>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <a href="#">About</a><a href="#">Careers</a><a href="#">Press</a><a href="#">Contact</a>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <a href="#">Privacy</a><a href="#">Terms</a><a href="#">Community guidelines</a><a href="#">Safety</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Hamkke. All rights reserved.</span>
+      <span class="mono">Made for people who'd rather not lift alone.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="image-slot.js"></script>
+<script src="site.js"></script>
+</body>
+</html>
