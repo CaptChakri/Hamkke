@@ -39,7 +39,7 @@
     menu.id = 'mobile-menu';
 
     [['how', 'How it works'], ['trust', 'Trust & safety'], ['features', 'Features'],
-     ['pricing', 'Pricing'], ['faq', 'FAQ']].forEach(function (item) {
+     ['faq', 'FAQ']].forEach(function (item) {
       var a = document.createElement('a');
       a.href = '#' + item[0];
       a.textContent = item[1];
