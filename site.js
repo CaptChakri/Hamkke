@@ -101,16 +101,13 @@
   }
 
   // ── Early-access signup ───────────────────────────────────────
-  // No backend yet — validate client-side, remember the signup in
-  // localStorage so a reload greets the member instead of re-asking,
-  // and swap the form for a success state.
+  // Static GitHub Pages has no backend yet. This opens a pre-filled email
+  // so early-access requests actually reach the Hamkke owner.
   var form = document.getElementById('signup');
   if (form) {
     var input = document.getElementById('signup-email');
     var msg = document.getElementById('signup-msg');
-    var STORE = 'hamkke.earlyaccess';
-    // Pragmatic check — type=email already guards in the browser, this is
-    // the friendlier second pass with our own copy.
+    var SIGNUP_TO = 'work.kchakradhar@gmail.com';
     var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     function showError(text) {
@@ -119,47 +116,53 @@
       msg.className = 'signup-msg error';
       input.focus();
     }
+
     function clearError() {
       input.classList.remove('is-error');
       msg.textContent = '';
       msg.className = 'signup-msg';
     }
-    // Clear the error the moment they start correcting it.
+
     input.addEventListener('input', clearError);
 
-    function succeed(email) {
-      try {
-        var list = JSON.parse(localStorage.getItem(STORE) || '[]');
-        if (list.indexOf(email) < 0) list.push(email);
-        localStorage.setItem(STORE, JSON.stringify(list));
-      } catch (err) { /* storage blocked — still show success */ }
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var email = (input.value || '').trim();
+
+      if (!email) {
+        showError('Enter your email to join.');
+        return;
+      }
+
+      if (!EMAIL_RE.test(email)) {
+        showError('That doesn’t look like a valid email.');
+        return;
+      }
+
+      var subject = 'Hamkke early access request';
+      var body =
+        'Please add me to the Hamkke early access list.\n\n' +
+        'Email: ' + email + '\n' +
+        'Source: https://hamkke.fit/';
+
+      window.location.href =
+        'mailto:' + SIGNUP_TO +
+        '?subject=' + encodeURIComponent(subject) +
+        '&body=' + encodeURIComponent(body);
 
       form.innerHTML =
         '<div class="signup-done" role="status">' +
         '  <span class="signup-check" aria-hidden="true">' +
         '    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>' +
         '  </span>' +
-        '  <h3>You’re on the list.</h3>' +
-        '  <p>We’ll email <b></b> the moment we open up your gym.</p>' +
+        '  <h3>You’re nearly on the list.</h3>' +
+        '  <p>Your email app should open with a ready-to-send request.</p>' +
+        '  <p class="signup-fine">Send that email and we’ll add you to early access. If nothing opened, email work.kchakradhar@gmail.com directly.</p>' +
         '</div>';
-      // textContent so the address can never be injected as markup.
-      form.querySelector('.signup-done b').textContent = email;
+
       form.classList.add('is-done');
-    }
-
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var email = (input.value || '').trim();
-      if (!email) { showError('Enter your email to join.'); return; }
-      if (!EMAIL_RE.test(email)) { showError('That doesn’t look like a valid email.'); return; }
-      succeed(email);
     });
-
-    // Already signed up in this browser? Greet them instead of re-asking.
-    try {
-      var prev = JSON.parse(localStorage.getItem(STORE) || '[]');
-      if (prev.length) succeed(prev[prev.length - 1]);
-    } catch (err) { /* ignore */ }
   }
 
   // Any in-page "Get early access" CTA jumps to #get; once the smooth
