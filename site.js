@@ -16,6 +16,23 @@
     });
   }
 
+  // ── Training-calendar heatmap (decorative) ───────────────────
+  // Fill the Progress mockup's calendar with deterministic "activity"
+  // so it reads like a real GitHub-style contribution grid.
+  var LEVELS = ['var(--bg-soft)', 'rgba(207,212,218,0.3)', 'rgba(207,212,218,0.55)', 'rgba(207,212,218,0.78)', 'var(--accent)'];
+  document.querySelectorAll('[data-heat]').forEach(function (grid) {
+    var cells = 13 * 7; // weeks × days
+    for (var i = 0; i < cells; i++) {
+      var r = Math.sin(i * 12.9898) * 43758.5453;
+      r = r - Math.floor(r); // deterministic 0..1
+      // ~30% rest days; the rest spread across levels 1–4, busier lately.
+      var level = r < 0.3 ? 0 : Math.min(4, 1 + Math.floor(r * 4 * (0.6 + i / cells)));
+      var cell = document.createElement('span');
+      cell.style.background = LEVELS[level];
+      grid.appendChild(cell);
+    }
+  });
+
   // ── Scroll reveal ─────────────────────────────────────────────
   var reveals = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {

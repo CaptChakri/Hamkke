@@ -244,15 +244,69 @@
       </div>
     </div>
 
-    <!-- feature 2: progress -->
+    <!-- feature 2: gym mode -->
     <div class="feat flip reveal">
       <div>
-        <h3 class="display">Track every lift you make together</h3>
-        <p style="font-size:16px;color:var(--ink-2);margin-top:14px">Log your sets, watch your big lifts trend up, and keep your streak alive. Your progress lives right next to the people who helped you earn it.</p>
+        <h3 class="display">Gym Mode runs the whole session</h3>
+        <p style="font-size:16px;color:var(--ink-2);margin-top:14px">Pick a plan or build your own cycle, then just lift. Hamkke counts your rest, logs your sets, and tracks volume and PRs live — and it keeps going in the background if you lock your phone or step away mid-workout.</p>
         <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>One-tap set logging with weight &amp; reps</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>Trend lines for squat, bench &amp; deadlift</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>Streaks, PRs and weekly volume</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>Preset plans (Push·Pull·Legs, Upper·Lower) or a custom cycle</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>Rest-timer ring, fast set logging, live PRs</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>Pause and pick up later — your session even survives a reload</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>Runs in the background with a tappable control notification</li>
+        </ul>
+      </div>
+      <div class="feat-art">
+        <div class="device" style="width:264px">
+          <div class="screen" style="height:540px">
+            <div class="screen-pad">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
+                <div class="m-eyebrow" style="display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:var(--accent);display:inline-block"></span>0:42 · session</div>
+                <span class="m-chip" style="background:var(--bg-soft);color:var(--ink-2)">❚❚ Pause</span>
+              </div>
+              <div style="display:flex;gap:8px;margin-top:14px">
+                <div class="m-card" style="flex:1;text-align:center;padding:11px 4px"><div class="num" style="font-size:20px">5</div><div class="m-eyebrow" style="margin-top:2px">sets</div></div>
+                <div class="m-card" style="flex:1;text-align:center;padding:11px 4px"><div class="num" style="font-size:20px">2.4k</div><div class="m-eyebrow" style="margin-top:2px">kg vol</div></div>
+                <div class="m-card" style="flex:1;text-align:center;padding:11px 4px"><div class="num" style="font-size:20px;color:var(--teal)">1</div><div class="m-eyebrow" style="margin-top:2px">PR</div></div>
+              </div>
+              <div style="position:relative;display:grid;place-items:center;margin-top:20px">
+                <svg viewBox="0 0 120 120" width="156" height="156">
+                  <circle cx="60" cy="60" r="52" fill="none" stroke="var(--line-2)" stroke-width="8"/>
+                  <circle cx="60" cy="60" r="52" fill="none" stroke="var(--accent)" stroke-width="8" stroke-linecap="round" stroke-dasharray="327" stroke-dashoffset="98" transform="rotate(-90 60 60)"/>
+                </svg>
+                <div style="position:absolute;text-align:center">
+                  <div class="num" style="font-size:30px">0:45</div>
+                  <div class="m-eyebrow" style="margin-top:1px">rest</div>
+                </div>
+              </div>
+              <div class="m-card" style="margin-top:20px">
+                <div style="display:flex;justify-content:space-between;align-items:center">
+                  <div style="font-family:var(--f-display);font-weight:600;font-size:15px">Bench Press</div>
+                  <span class="m-eyebrow">Set 3 of 4</span>
+                </div>
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-top:11px;gap:8px">
+                  <span class="step">−</span>
+                  <div class="num" style="font-size:22px">60<span style="font-size:12px;color:var(--ink-3)"> kg</span> × 8</div>
+                  <span class="step">+</span>
+                </div>
+              </div>
+              <div style="margin-top:11px;height:46px;border-radius:14px;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-family:var(--f-display);font-weight:600;font-size:15px">Log set</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- feature 3: progress -->
+    <div class="feat reveal">
+      <div>
+        <h3 class="display">Progress that logs itself</h3>
+        <p style="font-size:16px;color:var(--ink-2);margin-top:14px">Because Gym Mode logs every set, your big lifts trend up on their own — no spreadsheet. Watch your PRs climb, keep your streak alive, and see your whole training year at a glance.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>Lifts logged automatically from Gym Mode — never typed in twice</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>Trend lines for squat, bench &amp; deadlift; streaks, PRs &amp; weekly volume</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>A contribution-style training calendar of every day you showed up</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>Body metrics sync from Apple Health &amp; Health Connect</li>
         </ul>
       </div>
       <div class="feat-art">
@@ -279,15 +333,20 @@
                 </svg>
               </div>
               <div class="m-card" style="margin-top:12px">
-                <div style="display:flex;justify-content:space-between;align-items:flex-end">
-                  <div><div style="font-family:var(--f-display);font-weight:600;font-size:14px">Deadlift</div><div style="margin-top:2px"><span class="num" style="font-size:24px">120</span> <span style="font-size:11px;color:var(--ink-3)">kg best</span></div></div>
-                  <span class="m-chip" style="background:var(--teal-soft);color:var(--teal)">↑ +18 kg</span>
+                <div style="display:flex;justify-content:space-between;align-items:center">
+                  <div class="m-eyebrow">Training calendar</div>
+                  <div class="m-eyebrow">38 training days</div>
                 </div>
-                <svg class="m-spark" viewBox="0 0 200 40" preserveAspectRatio="none" style="margin-top:8px">
-                  <polygon points="5,40 5,32 38,28 70,25 102,21 135,16 168,11 195,7 195,40" fill="url(#sg)"/>
-                  <polyline points="5,32 38,28 70,25 102,21 135,16 168,11 195,7" fill="none" stroke="var(--accent)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-                  <circle cx="195" cy="7" r="3.4" fill="var(--accent)" stroke="var(--bg-2)" stroke-width="2"/>
-                </svg>
+                <div class="m-heat" data-heat style="margin-top:9px"></div>
+                <div style="display:flex;align-items:center;justify-content:flex-end;gap:5px;margin-top:9px">
+                  <span class="m-eyebrow">less</span>
+                  <span class="hk" style="background:var(--bg-soft)"></span>
+                  <span class="hk" style="background:rgba(207,212,218,0.3)"></span>
+                  <span class="hk" style="background:rgba(207,212,218,0.55)"></span>
+                  <span class="hk" style="background:rgba(207,212,218,0.78)"></span>
+                  <span class="hk" style="background:var(--accent)"></span>
+                  <span class="m-eyebrow">more</span>
+                </div>
               </div>
             </div>
           </div>
@@ -308,6 +367,10 @@
       <div class="qa">
         <button>Is it safe to meet someone from the app?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
         <div class="ans"><p>Safety is the core of Hamkke. Every member verifies a government ID, gym check-ins are confirmed, and first sessions are suggested during staffed, public gym hours. You can share your live session with a trusted contact in one tap, and read vouches and reviews before you match.</p></div>
+      </div>
+      <div class="qa">
+        <button>Can I track my own workouts in the app?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="ans"><p>Absolutely — Gym Mode is a full training companion on its own. Pick a plan like Push·Pull·Legs or build your own cycle, then lift: it runs the rest timer, logs each set, and tracks your volume and PRs live. Pause and pick up later, and it keeps going in the background with a tappable control notification. Everything flows straight into Progress, so your lifts and streak update themselves — no double entry.</p></div>
       </div>
       <div class="qa">
         <button>Do I have to pay to use it?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>

@@ -160,6 +160,12 @@ body.menu-open #mobile-menu { display: flex; }
 .m-seg > div.on { background: var(--accent); color: var(--accent-ink); border-color: transparent; }
 .m-chip { display: inline-flex; padding: 4px 10px; border-radius: 999px; font-size: 10.5px; font-weight: 700; }
 .m-spark { width: 100%; height: 40px; display: block; }
+/* Gym Mode stepper +/- buttons */
+.step { width: 34px; height: 34px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg-soft); color: var(--ink-2); display: grid; place-items: center; font-size: 19px; line-height: 1; flex: none; }
+/* Training-calendar heatmap (GitHub-contributions style) */
+.m-heat { display: grid; grid-template-columns: repeat(13, 1fr); gap: 3px; }
+.m-heat span { aspect-ratio: 1; border-radius: 2px; background: var(--bg-soft); }
+.hk { width: 9px; height: 9px; border-radius: 2px; display: inline-block; }
 
 /* ─── sections ─── */
 section { position: relative; }
