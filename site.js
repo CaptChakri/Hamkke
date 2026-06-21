@@ -55,10 +55,10 @@
     menu = document.createElement('div');
     menu.id = 'mobile-menu';
 
-    [['how', 'How it works'], ['trust', 'Trust & safety'], ['features', 'Features'],
-     ['faq', 'FAQ']].forEach(function (item) {
+    [['#how', 'How it works'], ['#trust', 'Trust & safety'], ['#features', 'Features'],
+     ['#faq', 'FAQ'], ['changelog.html', 'Changelog']].forEach(function (item) {
       var a = document.createElement('a');
-      a.href = '#' + item[0];
+      a.href = item[0];
       a.textContent = item[1];
       a.className = 'mm-link';
       a.addEventListener('click', closeMenu);

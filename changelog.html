@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Changelog — Hamkke</title>
+<meta name="description" content="What's new in Hamkke — every release of the verified gym-buddy and mentor app, newest first." />
+<meta name="theme-color" content="#0e0f11" />
+<link rel="canonical" href="https://hamkke.fit/changelog.html" />
+<meta property="og:url" content="https://hamkke.fit/changelog.html" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="apple-touch-icon" href="favicon.svg" />
+<meta property="og:title" content="Changelog — Hamkke" />
+<meta property="og:description" content="What's new in Hamkke, newest first." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="site.css" />
+</head>
+<body>
+
+<!-- ░░ NAV ░░ -->
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="index.html">
+      <span class="brand-mark"><svg viewBox="0 0 24 24"><path d="M7.5 8.2C3.8 8.2 3.8 15.8 7.5 15.8 11.2 15.8 12.8 8.2 16.5 8.2 20.2 8.2 20.2 15.8 16.5 15.8 12.8 15.8 11.2 8.2 7.5 8.2Z" fill="none" stroke="var(--accent-ink)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      Hamkke
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#how">How it works</a>
+      <a href="index.html#trust">Trust &amp; safety</a>
+      <a href="index.html#features">Features</a>
+      <a href="changelog.html" class="active" aria-current="page">Changelog</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary btn-sm" href="index.html#get">Get early access</a>
+    </div>
+  </div>
+</header>
+
+<main class="section">
+  <div class="wrap">
+
+    <!-- ░░ HEAD ░░ -->
+    <div class="log-head reveal in">
+      <span class="eyebrow">Changelog</span>
+      <h1 class="display" style="font-size:clamp(2rem,5vw,46px);margin-top:14px">What's new in Hamkke.</h1>
+      <p class="lead-sub">Every release, newest first — what we shipped, fixed, and hardened. Generated live from the app's
+        <a href="https://keepachangelog.com/en/1.1.0/" class="mono" style="color:var(--accent)">Keep&nbsp;a&nbsp;Changelog</a>.</p>
+    </div>
+
+    <!-- ░░ TIMELINE (rendered from changelog.md at runtime) ░░ -->
+    <div class="changelog">
+      <aside class="log-index" id="logIndex" aria-label="Releases">
+        <span class="eyebrow">Releases</span>
+      </aside>
+      <div class="log-stream" id="logStream">
+        <p class="release-note" id="logStatus">Loading the latest releases…</p>
+        <noscript>This changelog is rendered with JavaScript. Enable it, or read <a href="changelog.md" style="color:var(--accent)">changelog.md</a> directly.</noscript>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- ░░ FOOTER ░░ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="index.html">
+          <span class="brand-mark"><svg viewBox="0 0 24 24"><path d="M7.5 8.2C3.8 8.2 3.8 15.8 7.5 15.8 11.2 15.8 12.8 8.2 16.5 8.2 20.2 8.2 20.2 15.8 16.5 15.8 12.8 15.8 11.2 8.2 7.5 8.2Z" fill="none" stroke="var(--accent-ink)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          Hamkke
+        </a>
+        <p style="margin-top:14px;max-width:24em;font-size:14.5px;color:#9fb0c6">Never lift alone. Verified gym buddies and mentors, matched by your building and your goals.</p>
+      </div>
+      <div>
+        <h5>Product</h5>
+        <a href="index.html#how">How it works</a><a href="index.html#features">Features</a><a href="index.html#trust">Trust &amp; safety</a><a href="changelog.html">Changelog</a>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <a href="about.html">About</a><a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="safety.html">Safety</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Hamkke. All rights reserved.</span>
+      <span class="mono">Made for people who'd rather not lift alone.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+<!-- ░░ changelog renderer ░░
+     Fetches the Keep-a-Changelog markdown at runtime and renders the timeline,
+     so the page always reflects the source file (no duplicated content). -->
+<script>
+(function () {
+  'use strict';
+
+  // The data file. It's a copy of HamkeApp/CHANGELOG.md kept in this repo.
+  // For zero-copy live sync, point this at the raw file in the app repo instead, e.g.:
+  //   var SOURCE = 'https://raw.githubusercontent.com/hamkke/HamkeApp/main/CHANGELOG.md';
+  var SOURCE = 'changelog.md';
+
+  var stream = document.getElementById('logStream');
+  var index = document.getElementById('logIndex');
+  var status = document.getElementById('logStatus');
+
+  var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  // Keep-a-Changelog section name → CSS modifier (drives the accent colour).
+  var CAT = {
+    added: 'added', changed: 'changed', deprecated: 'deprecated', removed: 'removed',
+    fixed: 'fixed', security: 'security', maintenance: 'maint', maint: 'maint'
+  };
+
+  function esc(s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+  // Minimal inline markdown: `code`, **bold**, [text](url). Escaped first.
+  function inline(s) {
+    return esc(s)
+      .replace(/`([^`]+)`/g, '<code>$1</code>')
+      .replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>')
+      .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+  }
+  function fmtDate(iso) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(iso || '');
+    return m ? parseInt(m[3], 10) + ' ' + MONTHS[+m[2] - 1] + ' ' + m[1] : (iso || '');
+  }
+  function shortDate(iso) {
+    var m = /^(\d{4})-(\d{2})/.exec(iso || '');
+    return m ? MONTHS[+m[2] - 1] + ' ' + m[1] : '';
+  }
+
+  // Parse the Keep-a-Changelog body into [{version, date, note, groups:[{name,items}]}].
+  function parse(md) {
+    var releases = [], cur = null, group = null;
+    md.split(/\r?\n/).forEach(function (line) {
+      var h = /^##\s+\[([^\]]+)\](?:\s*[-–—]\s*(.+))?\s*$/.exec(line);
+      if (h) { cur = { version: h[1], date: (h[2] || '').trim(), note: '', groups: [] }; releases.push(cur); group = null; return; }
+      if (!cur) return;                              // skip the file's top matter
+      if (/^\[[^\]]+\]:\s/.test(line)) return;       // skip link-reference definitions
+      var g = /^###\s+(.+?)\s*$/.exec(line);
+      if (g) { group = { name: g[1].trim(), items: [] }; cur.groups.push(group); return; }
+      var li = /^[-*]\s+(.+)$/.exec(line);
+      if (li) { if (group) group.items.push(li[1]); return; }
+      if (line.trim() && !group) cur.note += (cur.note ? ' ' : '') + line.trim();
+    });
+    return releases;
+  }
+
+  function hasContent(r) { return !!r.note || r.groups.some(function (g) { return g.items.length; }); }
+  function isUnreleased(r) { return r.version.toLowerCase() === 'unreleased'; }
+  function anchorId(r) { return isUnreleased(r) ? 'unreleased' : 'v' + r.version; }
+  function label(r) { return isUnreleased(r) ? 'Unreleased' : 'v' + r.version; }
+
+  function render(releases) {
+    var visible = releases.filter(hasContent);
+    if (!visible.length) { status.textContent = 'No releases documented yet.'; return; }
+
+    // The newest dated release gets a "Latest" badge (file is newest-first).
+    var latest = -1;
+    visible.forEach(function (r, i) { if (latest < 0 && !isUnreleased(r) && r.date) latest = i; });
+
+    var streamHTML = '', indexHTML = '<span class="eyebrow">Releases</span>';
+    visible.forEach(function (r, i) {
+      var id = anchorId(r), name = label(r);
+      var tag = isUnreleased(r) ? 'In progress' : (i === latest ? 'Latest' : '');
+      var date = isUnreleased(r) ? 'Next release' : fmtDate(r.date);
+
+      indexHTML += '<a href="#' + id + '"><span class="v">' + name + '</span>'
+        + '<span class="d">' + (isUnreleased(r) ? 'Soon' : shortDate(r.date)) + '</span></a>';
+
+      streamHTML += '<section class="release ' + (isUnreleased(r) ? 'unreleased ' : '') + '" id="' + id + '">'
+        + '<div class="release-head">'
+        + '<a class="release-v" href="#' + id + '">' + name + ' <span class="hash" aria-hidden="true">#</span></a>'
+        + (tag ? '<span class="release-tag">' + tag + '</span>' : '')
+        + '<span class="release-date">' + date + '</span>'
+        + '</div>'
+        + (r.note ? '<p class="release-note">' + inline(r.note) + '</p>' : '')
+        + r.groups.filter(function (g) { return g.items.length; }).map(function (g) {
+          var cls = CAT[g.name.toLowerCase()] || 'maint';
+          return '<div class="cl-group ' + cls + '">'
+            + '<span class="cl-cat"><span class="dot"></span>' + esc(g.name) + '</span>'
+            + '<ul class="cl-list">' + g.items.map(function (it) { return '<li>' + inline(it) + '</li>'; }).join('') + '</ul>'
+            + '</div>';
+        }).join('')
+        + '</section>';
+    });
+
+    stream.innerHTML = streamHTML;
+    index.innerHTML = indexHTML;
+    spy();
+    if (location.hash) { var t = document.getElementById(location.hash.slice(1)); if (t) t.scrollIntoView(); }
+  }
+
+  // Highlight the active version in the index as you scroll.
+  function spy() {
+    var links = {};
+    index.querySelectorAll('a[href^="#"]').forEach(function (a) { links[a.getAttribute('href').slice(1)] = a; });
+    var sections = Object.keys(links).map(function (id) { return document.getElementById(id); }).filter(Boolean);
+    if (!sections.length || !('IntersectionObserver' in window)) return;
+    function setActive(id) { Object.keys(links).forEach(function (k) { links[k].classList.toggle('active', k === id); }); }
+    setActive(sections[0].id);
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) setActive(en.target.id); });
+    }, { rootMargin: '-20% 0px -72% 0px', threshold: 0 });
+    sections.forEach(function (s) { io.observe(s); });
+  }
+
+  fetch(SOURCE, { cache: 'no-cache' })
+    .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
+    .then(function (md) { render(parse(md)); })
+    .catch(function (err) {
+      status.innerHTML = 'Couldn’t load the changelog (' + esc(String(err.message || err)) + '). '
+        + 'If you opened this file directly, serve it over HTTP — browsers block <code>fetch()</code> on <code>file://</code>.';
+    });
+})();
+</script>
+</body>
+</html>

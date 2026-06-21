@@ -347,3 +347,83 @@ section { position: relative; }
   .signup-row { flex-direction: column; }
   .signup-btn { width: 100%; }
 }
+
+/* ─── changelog ─────────────────────────────────────────────────
+   /changelog page: a version timeline with a sticky release index.
+   Reuses the brand tokens; entries deep-link by version (#v1.0.0). */
+.nav-links a.active, .nav-links a[aria-current="page"] { color: var(--ink); }
+
+.log-head { max-width: 720px; }
+.log-head .lead-sub { font-size: 18px; color: var(--ink-2); margin-top: 16px; text-wrap: pretty; }
+
+.changelog { display: grid; grid-template-columns: 216px 1fr; gap: 56px; align-items: start; margin-top: 52px; }
+
+/* sticky release index (left rail) */
+.log-index { position: sticky; top: 100px; display: flex; flex-direction: column; gap: 2px; }
+.log-index .eyebrow { margin: 0 0 12px 12px; }
+.log-index a {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 10px;
+  padding: 9px 12px; border-radius: 10px; border: 1px solid transparent;
+  color: var(--ink-2); font-weight: 600; font-size: 14.5px;
+  transition: background .15s ease, color .15s ease, border-color .15s ease;
+}
+.log-index a:hover { background: var(--bg-2); color: var(--ink); }
+.log-index a.active { background: var(--bg-2); color: var(--ink); border-color: var(--line); }
+.log-index a .v { font-family: var(--f-display); letter-spacing: -0.01em; }
+.log-index a .d { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: 0.04em; color: var(--ink-3); white-space: nowrap; }
+
+/* the timeline stream (right) */
+.log-stream { position: relative; }
+.log-stream::before {
+  content: ''; position: absolute; left: 7px; top: 12px; bottom: 40px; width: 2px;
+  background: linear-gradient(var(--accent), var(--teal) 55%, transparent); opacity: .4;
+}
+
+.release { position: relative; padding: 0 0 56px 40px; scroll-margin-top: 100px; }
+.release:last-child { padding-bottom: 8px; }
+.release::before {
+  content: ''; position: absolute; left: 0; top: 6px; width: 16px; height: 16px;
+  border-radius: 50%; background: var(--bg); border: 3px solid var(--accent);
+  box-shadow: 0 0 0 5px var(--bg);
+}
+.release.unreleased::before { border-color: var(--teal); }
+
+.release-head { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 14px; }
+.release-v {
+  display: inline-flex; align-items: center; gap: 7px; color: var(--ink);
+  font-family: var(--f-display); font-weight: 600; font-size: 26px; letter-spacing: -0.02em;
+}
+.release-v .hash { color: var(--ink-3); opacity: 0; transition: opacity .15s ease; }
+.release-v:hover .hash, .release-v:focus-visible .hash { opacity: 1; color: var(--accent); }
+.release-date { font-family: var(--f-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
+.release-tag {
+  display: inline-flex; align-items: center; padding: 4px 11px; border-radius: 999px;
+  font-size: 11.5px; font-weight: 700; letter-spacing: 0.02em;
+  background: var(--accent-soft); color: var(--accent); border: 1px solid var(--line);
+}
+.release.unreleased .release-tag { background: var(--teal-soft); color: var(--teal); }
+.release-note { color: var(--ink-2); font-size: 16px; line-height: 1.55; margin-top: 12px; max-width: 64ch; }
+
+.cl-group { margin-top: 22px; }
+.cl-group.added      { --cat: var(--teal); }
+.cl-group.changed    { --cat: var(--teal); }
+.cl-group.fixed      { --cat: var(--accent); }
+.cl-group.security   { --cat: var(--gold); }
+.cl-group.deprecated { --cat: var(--gold); }
+.cl-group.removed    { --cat: #c46a5a; }
+.cl-group.maint      { --cat: var(--violet); }
+.cl-cat { display: inline-flex; align-items: center; gap: 8px; font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--cat); }
+.cl-cat .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--cat); flex: none; }
+.cl-list { list-style: none; padding: 0; margin: 12px 0 0; display: flex; flex-direction: column; gap: 9px; }
+.cl-list li { position: relative; padding-left: 22px; font-size: 15px; line-height: 1.5; color: var(--ink-2); }
+.cl-list li::before { content: ''; position: absolute; left: 4px; top: 8px; width: 6px; height: 6px; border-radius: 2px; background: var(--cat); opacity: .6; }
+.cl-list li b, .cl-list li strong { color: var(--ink); font-weight: 700; }
+.cl-list li code {
+  font-family: var(--f-mono); font-size: 12.5px; color: var(--accent);
+  background: var(--bg-soft); border: 1px solid var(--line); border-radius: 6px; padding: 1px 6px;
+}
+
+@media (max-width: 900px) {
+  .changelog { grid-template-columns: 1fr; gap: 0; margin-top: 36px; }
+  .log-index { display: none; }
+}
