@@ -43,6 +43,8 @@ body {
   font-family: var(--f-body); -webkit-font-smoothing: antialiased;
   letter-spacing: -0.01em; line-height: 1.55;
   overflow-x: clip; /* contain stray horizontal overflow without breaking sticky nav */
+  display: flex; flex-direction: column; /* sticky footer: footer hugs bottom on short pages */
+  min-height: 100vh; min-height: 100dvh;
 }
 h1,h2,h3,h4,p { margin: 0; }
 a { color: inherit; text-decoration: none; }
@@ -261,7 +263,7 @@ section { position: relative; }
 .signup-done b { font-weight: 700; }
 
 /* footer */
-.footer { background: var(--navy); color: var(--ink-2); padding: 64px 0 40px; border-top: 1px solid var(--line); }
+.footer { margin-top: auto; background: var(--navy); color: var(--ink-2); padding: 64px 0 40px; border-top: 1px solid var(--line); }
 .footer .brand { color: var(--ink); }
 .foot-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 36px; }
 .foot-grid h5 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-3); margin: 0 0 16px; font-weight: 700; }

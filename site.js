@@ -56,7 +56,7 @@
     menu.id = 'mobile-menu';
 
     [['#how', 'How it works'], ['#trust', 'Trust & safety'], ['#features', 'Features'],
-     ['#faq', 'FAQ'], ['changelog.html', 'Changelog']].forEach(function (item) {
+     ['#faq', 'FAQ'], ['/changelog', 'Changelog']].forEach(function (item) {
       var a = document.createElement('a');
       a.href = item[0];
       a.textContent = item[1];
@@ -107,7 +107,7 @@
   if (form) {
     var input = document.getElementById('signup-email');
     var msg = document.getElementById('signup-msg');
-    var SIGNUP_TO = 'work.kchakradhar@gmail.com';
+    var SIGNUP_TO = 'hello@hamkke.fit';
     var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     function showError(text) {
@@ -158,7 +158,7 @@
         '  </span>' +
         '  <h3>You’re nearly on the list.</h3>' +
         '  <p>Your email app should open with a ready-to-send request.</p>' +
-        '  <p class="signup-fine">Send that email and we’ll add you to early access. If nothing opened, email work.kchakradhar@gmail.com directly.</p>' +
+        '  <p class="signup-fine">Send that email and we’ll add you to early access. If nothing opened, email hello@hamkke.fit directly.</p>' +
         '</div>';
 
       form.classList.add('is-done');
