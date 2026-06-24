@@ -242,6 +242,8 @@ section { position: relative; }
 }
 .signup-input.is-error { border-color: #c46a5a; box-shadow: 0 0 0 4px rgba(196,106,90,0.20); }
 .signup-btn { flex: none; height: 56px; }
+.signup-btn.is-loading { opacity: 0.7; cursor: progress; }
+.signup-btn:disabled { pointer-events: none; }
 .signup-msg { font-size: 13.5px; min-height: 1.3em; margin: 12px 0 0; }
 .signup-msg.error {
   display: inline-block; color: #ffb4a8; background: rgba(196,106,90,0.16);

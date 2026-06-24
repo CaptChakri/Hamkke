@@ -101,14 +101,23 @@
   }
 
   // ── Early-access signup ───────────────────────────────────────
-  // Static GitHub Pages has no backend yet. This opens a pre-filled email
-  // so early-access requests actually reach the Hamkke owner.
+  // Static GitHub Pages has no backend, so the form posts to Formspree
+  // (AJAX + JSON) and the email lands in the Formspree dashboard, ready
+  // to export when we email the waitlist at launch.
+  //
+  // SETUP: create a form at https://formspree.io, then paste its endpoint
+  // below (looks like https://formspree.io/f/abcdwxyz). Until that's done
+  // the form falls back to a pre-filled mailto so signups still reach us.
+  var FORM_ENDPOINT = 'https://formspree.io/f/mykqkkzy';
+  var SIGNUP_TO = 'hello@hamkke.fit';
+
   var form = document.getElementById('signup');
   if (form) {
     var input = document.getElementById('signup-email');
     var msg = document.getElementById('signup-msg');
-    var SIGNUP_TO = 'hello@hamkke.fit';
+    var submitBtn = form.querySelector('.signup-btn');
     var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    var endpointReady = FORM_ENDPOINT.indexOf('YOUR_FORM_ID') === -1;
 
     function showError(text) {
       input.classList.add('is-error');
@@ -121,6 +130,41 @@
       input.classList.remove('is-error');
       msg.textContent = '';
       msg.className = 'signup-msg';
+    }
+
+    function showDone(html) {
+      form.innerHTML =
+        '<div class="signup-done" role="status">' +
+        '  <span class="signup-check" aria-hidden="true">' +
+        '    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>' +
+        '  </span>' + html +
+        '</div>';
+      form.classList.add('is-done');
+    }
+
+    // No backend wired yet (or the network call failed): open a pre-filled
+    // email so the request still has a path to reach us.
+    function mailtoFallback(email) {
+      var subject = 'Hamkke early access request';
+      var body =
+        'Please add me to the Hamkke early access list.\n\n' +
+        'Email: ' + email + '\n' +
+        'Source: https://hamkke.fit/';
+      window.location.href =
+        'mailto:' + SIGNUP_TO +
+        '?subject=' + encodeURIComponent(subject) +
+        '&body=' + encodeURIComponent(body);
+      showDone(
+        '<h3>You’re nearly on the list.</h3>' +
+        '<p>Your email app should open with a ready-to-send request.</p>' +
+        '<p class="signup-fine">Send that email and we’ll add you to early access. If nothing opened, email hello@hamkke.fit directly.</p>'
+      );
+    }
+
+    function setLoading(on) {
+      if (!submitBtn) return;
+      submitBtn.disabled = on;
+      submitBtn.classList.toggle('is-loading', on);
     }
 
     input.addEventListener('input', clearError);
@@ -140,28 +184,43 @@
         return;
       }
 
-      var subject = 'Hamkke early access request';
-      var body =
-        'Please add me to the Hamkke early access list.\n\n' +
-        'Email: ' + email + '\n' +
-        'Source: https://hamkke.fit/';
+      if (!endpointReady) {
+        mailtoFallback(email);
+        return;
+      }
 
-      window.location.href =
-        'mailto:' + SIGNUP_TO +
-        '?subject=' + encodeURIComponent(subject) +
-        '&body=' + encodeURIComponent(body);
+      clearError();
+      setLoading(true);
 
-      form.innerHTML =
-        '<div class="signup-done" role="status">' +
-        '  <span class="signup-check" aria-hidden="true">' +
-        '    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>' +
-        '  </span>' +
-        '  <h3>You’re nearly on the list.</h3>' +
-        '  <p>Your email app should open with a ready-to-send request.</p>' +
-        '  <p class="signup-fine">Send that email and we’ll add you to early access. If nothing opened, email hello@hamkke.fit directly.</p>' +
-        '</div>';
+      var data = new FormData();
+      data.append('email', email);
+      data.append('_subject', 'Hamkke early access request');
+      data.append('source', 'https://hamkke.fit/');
 
-      form.classList.add('is-done');
+      fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        body: data,
+        headers: { Accept: 'application/json' }
+      })
+        .then(function (res) {
+          if (res.ok) {
+            showDone(
+              '<h3>You’re on the list.</h3>' +
+              '<p>We’ll send one heads-up the moment Hamkke opens in your gym.</p>'
+            );
+            return;
+          }
+          // Formspree returns 4xx with a JSON error (e.g. invalid email).
+          return res.json().then(function (out) {
+            var first = out && out.errors && out.errors[0];
+            setLoading(false);
+            showError(first && first.message ? first.message : 'Something went wrong. Try again.');
+          });
+        })
+        .catch(function () {
+          // Network/blocked: don't lose the signup — hand off to email.
+          mailtoFallback(email);
+        });
     });
   }
 
